@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include "command.h"
 
 using namespace std;
 
@@ -31,6 +32,19 @@ int main(int argc, char* argv[]) {
         cout << "sysinfo-cli version 1.0.0" << endl;
         return 0;   
     }
+    else if(arg == "-c" || arg == "--cpu") {
+        cout << "CPU Information: [Placeholder for CPU info]" << endl;
+        return 0;
+    }
+    else if(arg == "-m" || arg == "--memory") {
+        cout << "Memory Information: [Placeholder for Memory info]" << endl;
+        return 0;
+    }
+    else if(arg == "-d" || arg == "--disk") {
+        cout << "Disk Information: [Placeholder for Disk info]" << endl;
+        return 0;
+    }
+    else {
 
     cerr << "Error: unknown option '" << arg << "'" << endl;
     printHelp();
