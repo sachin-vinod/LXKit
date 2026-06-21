@@ -24,29 +24,15 @@ int main(int argc, char* argv[]) {
     }
 
     string arg = argv[1];
-    if (arg == "-h" || arg == "--help") {
-        printHelp();
-        return 0;
-    }
-    else if(arg == "-v" || arg == "--version") {
-        cout << "sysinfo-cli version 1.0.0" << endl;
-        return 0;   
-    }
-    else if(arg == "-c" || arg == "--cpu") {
-        cout << "CPU Information: [Placeholder for CPU info]" << endl;
-        return 0;
-    }
-    else if(arg == "-m" || arg == "--memory") {
-        cout << "Memory Information: [Placeholder for Memory info]" << endl;
-        return 0;
-    }
-    else if(arg == "-d" || arg == "--disk") {
-        cout << "Disk Information: [Placeholder for Disk info]" << endl;
-        return 0;
+    if(arg == "sysinfo") {
+        if(argc < 3) {
+            sysinfo("");
+            return 0;
+        }
+        sysinfo(argv[2]);
     }
     else {
-
-    cerr << "Error: unknown option '" << arg << "'" << endl;
-    printHelp();
-    return 1;
+        cout << "Error: unknown command '" << arg << "'" << endl;
+        printHelp();
+    }
 }

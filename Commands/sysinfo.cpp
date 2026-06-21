@@ -13,7 +13,7 @@ void printVersion() {
 }
 
 void sysinfo(char arg){
-    if(arg == '-h' || arg == "--help") {
+    if(arg == '-h' || arg == "--help" || arg == "") {
         printHelp();
     }
     else if(arg == '-v' || arg == "--version") {
